@@ -1,13 +1,28 @@
-package com.boilerplate;
+package com.educationapp;
+
+import android.os.Build;
+import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    // Set the theme to AppTheme BEFORE onCreate to support
+    // coloring the background, status bar, and navigation bar.
+    // This is required for expo-splash-screen.
+    SplashScreen.show(this, true);
+    setTheme(R.style.AppTheme);
+    super.onCreate(null);
+  }
+
   /**
-   * Returns the name of the main component registered from JavaScript. This is used to schedule
+   * Returns the name of the main component registered from JavaScript. This is
+   * used to schedule
    * rendering of the component.
    */
   @Override
@@ -16,7 +31,8 @@ public class MainActivity extends ReactActivity {
   }
 
   /**
-   * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
+   * Returns the instance of the {@link ReactActivityDelegate}. There the RootView
+   * is created and
    * you can specify the rendered you wish to use (Fabric or the older renderer).
    */
   @Override
